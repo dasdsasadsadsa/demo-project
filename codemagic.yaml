@@ -1,10 +1,9 @@
 workflows:
   flutter-android-apk:
     name: OneTap Full APK Build
-    instance_type: linux_x2
+    instance_type: mac_mini_m2
     max_build_duration: 60
     environment:
-      ubuntu: 24.04
       java: 17
       flutter: stable
     scripts:
