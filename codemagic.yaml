@@ -1,21 +1,21 @@
 workflows:
-  android-debug:
-    name: OneTap Full Debug APK
+  flutter-android-apk:
+    name: OneTap Full APK Build
     instance_type: linux_x2
     max_build_duration: 60
     environment:
       ubuntu: 24.04
       java: 17
-      vars:
-        GRADLE_HOME: /home/builder/programs/gradle-8.13
+      flutter: stable
     scripts:
       - name: Set Android SDK location
         script: |
-          echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/local.properties"
-      - name: Build debug APK
+          echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/android/local.properties"
+      - name: Install Flutter dependencies
         script: |
-          export PATH="$GRADLE_HOME/bin:$PATH"
-          gradle --version
-          gradle :app:assembleDebug --stacktrace
+          flutter pub get
+      - name: Build release APK
+        script: |
+          flutter build apk --release
     artifacts:
-      - app/build/outputs/**/*.apk
+      - build/app/outputs/flutter-apk/*.apk

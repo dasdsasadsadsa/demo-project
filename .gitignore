@@ -1,56 +1,50 @@
 ```
-# Build artifacts
+# Build and intermediate files
+android/app/build/
+android/.gradle/
 build/
-dist/
 
 # Dependencies
 node_modules/
-.venv/
-venv/
-__pycache__/
-*.egg-info/
+vendor/
 
-# Logs and temp files
+# Logs
 *.log
-*.tmp
-*.swp
 
-# Environment
+# Environment variables
 .env
 .env.local
 *.env.*
 
-# Editors
+# IDE files
 .vscode/
 .idea/
+*.swp
+*.swo
+*.tmp
 
-# OS
+# OS generated files
 .DS_Store
 Thumbs.db
 
-# Compiled files
-*.pyc
-*.class
-*.o
-*.obj
-*.exe
-*.dll
-*.so
-*.a
-*.out
-
-# Coverage
+# Coverage reports
 coverage/
 htmlcov/
-.coverage
+
+# Distribution / packaging
+dist/
+*.tar.gz
+*.zip
+
+# Flutter specific
+.dart_tool/
+.flutter-plugins
+.flutter-plugin-dependencies
+.packages
+*.g.dart
+*.freezed.dart
 
 # Gradle
 .gradle/
-target/
-
-# MyPy
-.mypy_cache/
-
-# PyTest
-.pytest_cache/
+!android/.gradle/
 ```
