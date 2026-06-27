@@ -1,0 +1,16 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.onetap.fullbrowser'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId 'com.onetap.fullbrowser'
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName '1.0'
+    }
+}
